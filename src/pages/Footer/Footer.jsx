@@ -30,7 +30,7 @@ const Footer = () => {
                                     <p>+88 01750 000 000 <br /> +88 01750 000 000</p>
                                 </div>
                                 <div className="text-white-50">
-                                    <p>info@gmail.com <br /> info@gmail.com </p>
+                                    <p>info@gmail.com <br /> food@gmail.com </p>
                                 </div>
                             </div>
                             {/* <div className="col pe-5">

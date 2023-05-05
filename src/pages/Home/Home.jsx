@@ -50,7 +50,7 @@ const Home = () => {
           {recipe.slice(0, 2).map(item => <MoreRecipe item={item} key={item.id} />)}
         </Row>
         <Row xs={1} md={1} lg={2} className="g-4 d-flex">
-          {recipe.slice(2, 4).map(item => <MoreRecipe item={item} key={item.id} />)}
+          {recipe.slice(4, 4).map(item => <MoreRecipe item={item} key={item.id} />)}
         </Row>
       </Row>
     </Container>
