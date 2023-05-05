@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import ActiveLink from "../ActiveLink/ActiveLink";
 
 const NavigationBar = () => {
   const { user,logOut } = useContext(AuthContext);
@@ -19,7 +20,7 @@ const NavigationBar = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               {/* <Nav.Link href="#features">Home</Nav.Link> */}
-              <Link
+              <ActiveLink
                 to="/"
                 style={{
                   textDecoration: "none",
@@ -28,10 +29,10 @@ const NavigationBar = () => {
                 }}
               >
                 Home
-              </Link>
+              </ActiveLink>
               {/* <Nav.Link href="#pricing">BLog</Nav.Link> */}
-              <Link
-                to="/blog" className="text-white"
+              <ActiveLink
+                to="/blog"
                 style={{
                   textDecoration: "none",
                   color: "white",
@@ -39,7 +40,7 @@ const NavigationBar = () => {
                 }}
               >
                 Blog
-              </Link>
+              </ActiveLink>
             </Nav>
             <Nav>
               <Nav.Link href="#deets" className="text-white">Farjana</Nav.Link>
