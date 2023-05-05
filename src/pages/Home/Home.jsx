@@ -3,6 +3,7 @@ import { Button, Card, CardGroup, Col, Container, Row } from "react-bootstrap";
 import { useLoaderData } from "react-router-dom";
 import Recipe from "./Recipe";
 import Featured from "./Featured";
+import MoreRecipe from "./MoreRecipe";
 
 const Home = () => {
     const recipe=useLoaderData()
@@ -45,6 +46,7 @@ const Home = () => {
       <Row>
       {/* {recipe.map(item=><Featured  item={item} key={item.id}></Featured>)} */}
       <Featured></Featured>
+      <MoreRecipe></MoreRecipe>
       </Row>
     </Container>
   );
