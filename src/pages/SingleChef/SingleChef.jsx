@@ -1,18 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import { Button, Card, Container, Table } from "react-bootstrap";
 import { useLoaderData, useParams } from "react-router-dom";
 import { FaEye, FaRegBookmark, FaRegStar, FaShareAlt, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
+import {Toaster, toast} from "react-hot-toast"
 import LazyLoad from "react-lazy-load";
 
 const SingleChef = () => {
   const chef = useLoaderData();
   console.log(chef);
   const { chefName, id, bio, like, number, img, recipe, experience } = chef;
+  const [disable, setDisable] = useState(false);
 
   const handleFavourite = () => {
-    toast("You Have Already Bookmarked This Blog");
+    toast.success("You added it to favourite");
+    setDisable(true);
   };
 
   return (
@@ -42,6 +45,7 @@ const SingleChef = () => {
           <Card.Text>
             <h3>Experience: {experience} years</h3>
           </Card.Text>
+          <hr />
 
           {recipe.map((r) => (
             <Table striped bordered hover>
@@ -82,9 +86,11 @@ const SingleChef = () => {
               </tbody>
             </Table>
           ))}
-          <Button onClick={handleFavourite} variant="success">
+          <Button onClick={handleFavourite} disabled={disable} className="btn-danger" variant="success">
             Favourite
           </Button>
+          <Toaster></Toaster>
+          <hr />
         </Card.Body>
       </Card>
     </Container>
