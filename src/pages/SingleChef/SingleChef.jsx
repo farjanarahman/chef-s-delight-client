@@ -21,6 +21,7 @@ const SingleChef = () => {
         <LazyLoad offsetVertical={500} threshold={0.95}>
           <Card.Img
             variant="top"
+            className="img-fluid"
             style={{ height: "500px", width: "100%" }}
             src={img}
           />
@@ -33,13 +34,13 @@ const SingleChef = () => {
             <h3>{bio}</h3>
           </Card.Text>
           <Card.Text>
-            <h3>{like} people like this</h3>
+            <h3>Liked {like} people</h3>
           </Card.Text>
           <Card.Text>
             <h3>{number} of item cooked</h3>
           </Card.Text>
           <Card.Text>
-            <h3>{experience} years experienced</h3>
+            <h3>Experience: {experience} years</h3>
           </Card.Text>
 
           {recipe.map((r) => (
