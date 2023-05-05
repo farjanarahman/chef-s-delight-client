@@ -9,8 +9,8 @@ const Recipe = ({ item }) => {
   return (
     <Container>
       <Col className=" ">
-        <Card>
-          <LazyLoad height={300}>
+        <Card className="" style={{height: '650px', marginBottom: '15px'}}>
+          <LazyLoad height={300} threshold={0.95}>
             <Card.Img
               variant="top"
               style={{ height: "300px", width: "100%" }}

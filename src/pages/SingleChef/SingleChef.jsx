@@ -18,7 +18,7 @@ const SingleChef = () => {
   return (
     <Container>
       <Card className="mt-5">
-        <LazyLoad offsetVertical={500}>
+        <LazyLoad offsetVertical={500} threshold={0.95}>
           <Card.Img
             variant="top"
             style={{ height: "500px", width: "100%" }}

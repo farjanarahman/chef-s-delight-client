@@ -46,7 +46,9 @@ const Home = () => {
       <Row>
       {/* {recipe.map(item=><Featured  item={item} key={item.id}></Featured>)} */}
       <Featured></Featured>
-      <MoreRecipe></MoreRecipe>
+      <Row xs={1} md={2} lg={3} className="g-4 d-flex mt-5">
+      {recipe.map(item=><MoreRecipe  item={item} key={item.id}></MoreRecipe>)}
+      </Row>
       </Row>
     </Container>
   );
