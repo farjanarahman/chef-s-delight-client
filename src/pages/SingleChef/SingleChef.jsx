@@ -3,29 +3,28 @@ import { Button, Card, Container, Table } from "react-bootstrap";
 import { useLoaderData, useParams } from "react-router-dom";
 import { FaEye, FaRegBookmark, FaRegStar, FaShareAlt, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
-import {  toast } from 'react-toastify';
+import { toast } from "react-toastify";
+import LazyLoad from "react-lazy-load";
 
 const SingleChef = () => {
   const chef = useLoaderData();
-  //console.log(chef.recipe[0].ingredients);
   console.log(chef);
   const { chefName, id, bio, like, number, img, recipe, experience } = chef;
-  // const id=useParams();
-  // console.log(id)
-//   const handleToast=()=>{
-//     toast.success("Add favourite button");
-//   }
-const handleFavourite = () =>{
+
+  const handleFavourite = () => {
     toast("You Have Already Bookmarked This Blog");
-}
+  };
+
   return (
     <Container>
       <Card className="mt-5">
-        <Card.Img
-          variant="top"
-          style={{ height: "500px", width: "100%" }}
-          src={img}
-        />
+        <LazyLoad offsetVertical={500}>
+          <Card.Img
+            variant="top"
+            style={{ height: "500px", width: "100%" }}
+            src={img}
+          />
+        </LazyLoad>
         <Card.Body className="text-secondary">
           <Card.Text className="text-dark">
             <h1>{chefName}</h1>
@@ -65,7 +64,7 @@ const handleFavourite = () =>{
                   ))}
                 </tr>
                 <tr>
-                  <th >Rating</th>
+                  <th>Rating</th>
                   <td colSpan={5}>
                     {r.rating}
                     <Rating
@@ -82,7 +81,9 @@ const handleFavourite = () =>{
               </tbody>
             </Table>
           ))}
-           <Button onClick={handleFavourite} variant="success">Favourite</Button>
+          <Button onClick={handleFavourite} variant="success">
+            Favourite
+          </Button>
         </Card.Body>
       </Card>
     </Container>
