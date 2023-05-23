@@ -8,15 +8,7 @@ import MoreRecipe from "./MoreRecipe";
 const Home = () => {
   const recipe = useLoaderData()
   console.log(recipe)
-  //const [recipe,setRecipe]=useState([]);
-  // useEffect(()=>{
-  //     fetch("https://assignment-10-alpha.vercel.app/recipes")
-  //     .then(res=>res.json())
-  //     .then(data=>{
-  //         setRecipe(data)
-  //         console.log(data)
-  //     })
-  // },[])
+
   return (
     <Container>
       <Row className="mt-5">
